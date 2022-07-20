@@ -25,9 +25,9 @@ const Games = (props) => {
                 <h2>{item.name}</h2>
                
                 <img className='game-image' src={`assets/images/${item.image}`} alt={item.name} />
-                <p><b>$</b>{item.price}</p>
+                
                 <p>{item.category}</p>
-                <button>Add to Cart</button>
+                
                 <button><Link id='react-link' to={`/games/details/${item._id}`}>Game Details</Link> </button>
               </div>
               </div>
