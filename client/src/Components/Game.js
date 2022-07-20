@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 
-const Game = () => {
+const Game = (props) => {
+  const {singleGame, loading, setLoading, getSingleGame} = props;
+  const id = useParams().id;
+  useEffect(() => {
+  getSingleGame(id);
+  },[]);
   return (
     <div>
       <h1>Game</h1>
-      Wtf am i doing with my life?
+      <p>{singleGame.name}</p>
+
     </div>
   )
 }

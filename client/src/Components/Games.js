@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom'
 
 const Games = (props) => {
   const {games, setGames, loading, setLoading} = props;
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
+ 
 
 
   return (
