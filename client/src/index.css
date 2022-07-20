@@ -272,12 +272,21 @@ button:hover {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
+  background-color: rgb(49, 49, 49);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   
 }
 
 .right-aside div {
   padding: 20px;
   margin:  50px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
 
 }
 
@@ -288,7 +297,11 @@ button:hover {
 } */
 
 .trailer {
-  
+  background-color: rgb(49, 49, 49);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -303,6 +316,11 @@ button:hover {
   align-items: center;
   flex-direction: column;
   padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
 }
 
 #back-btn {

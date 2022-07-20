@@ -27,7 +27,7 @@ const Navbar = () => {
                     <a href='#' id='store'  onClick={toggle}>Store</a>
                     {isOpen && <div  className='dropdown'> 
                       <a href='/'>Games</a>
-                      <a><Link path="/categorys" element={<Categories />}>Categories</Link></a>
+                      <a href='/'>Categories</a>
                     </div>}
                     <a href='#'  >Library</a>
                     
