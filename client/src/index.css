@@ -232,3 +232,80 @@ button:hover {
   color: red;
   background-color: white;
 }
+
+
+.single-game{
+  color: white;
+  display: grid;
+  column-gap: 50px;
+  row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.back-btn {
+ 
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+}
+
+.single-title {
+  
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+}
+
+.single-title div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.right-aside {
+
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  
+}
+
+.right-aside div {
+  padding: 20px;
+  margin:  50px;
+
+}
+
+/* mobile */
+/* iframe {
+  width: 100%;
+  height: 100%;
+} */
+
+.trailer {
+  
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+  
+}
+
+.trailer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#back-btn {
+  font-size: 50px;
+  
+}
