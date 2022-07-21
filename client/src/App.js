@@ -48,11 +48,11 @@ function App() {
   return (
     <BrowserRouter>
      <Navbar />
-     <Search  searchGamesFunction={searchGamesFunction}  clearSearch={clearSearch} games={games} loading={loading} />
+    
           {/* put nav and search in app.js ? */}
            {/* routes */}
            <Routes>
-          <Route path="/" element={<Home games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
+          <Route path="/"  element={<Home searchGamesFunction={searchGamesFunction}  clearSearch={clearSearch} games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
           <Route path="/games/details/:id" element={<Game getSingleGame={getSingleGame} loading={loading} setLoading={setLoading} singleGame={singleGame}  />} />
           </Routes>
        

@@ -16,6 +16,10 @@ const GameSchema = new Schema({
         type: String,
         required: true
     },
+    isTrending: {
+        type: Boolean,
+        default: false
+    },
     image: {
         type: String
     },
@@ -29,6 +33,10 @@ const GameSchema = new Schema({
     trailer: {
         type: String
     },
+    platforms: [{
+        type: String,
+        default: "PC"
+    }],
     releaseDate: {
         type: Date
     }

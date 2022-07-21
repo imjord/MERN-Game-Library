@@ -12,11 +12,11 @@ const Game = (props) => {
   return (
     <div className='single-game'>
 
-      <div className='single-title'>
+      {/* <div className='single-title'>
         <div>
         <h1>{singleGame.name}</h1>
         </div>
-        </div>  
+        </div>   */}
       <div className='right-aside'>
         <div>
         <h4>Description:</h4>

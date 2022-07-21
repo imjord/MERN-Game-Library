@@ -3,10 +3,11 @@ import Spinner from '../assets/spinner.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import Search from './Search'
 
 
 const Games = (props) => {
-  const {games, setGames, loading, setLoading, searchGames} = props;
+  const {clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
   
   if(searchGames){
     return (
@@ -26,8 +27,7 @@ const Games = (props) => {
 
   return (
     <div>
-      <div className='title'>
-        </div>
+       <Search searchGamesFunction={searchGamesFunction} clearSearch={clearSearch}  />
       <div className='games'>
         {searchGames ?  (
             <div className='game' key={searchGames.id}>

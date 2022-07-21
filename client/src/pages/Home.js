@@ -4,7 +4,7 @@ import Games from '../Components/Games';
 
 
 const Home = (props) => {
-    const {games, setGames, loading, setLoading} = props;
+    const {clearSearch, searchGamesFunction, games, setGames, loading, setLoading} = props;
 
 
   return (
@@ -12,7 +12,7 @@ const Home = (props) => {
       <main>
         <div className='title'>
           <div>
-            <Games games={games} setGames={setGames} loading={loading} setLoading={setLoading}  />
+            <Games searchGamesFunction={searchGamesFunction} games={games} setGames={setGames} loading={loading} setLoading={setLoading}  />
             </div>
             </div>
           </main>
