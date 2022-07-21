@@ -287,6 +287,7 @@ button:hover {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.7);
   color: black;
+  height: 300px;
 
 }
 
@@ -325,5 +326,22 @@ button:hover {
 
 #back-btn {
   font-size: 50px;
+  
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2d2c2c; 
+ 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(78, 77, 77);
   
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Spinner from '../assets/spinner.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -6,17 +6,52 @@ import { Link } from 'react-router-dom'
 
 
 const Games = (props) => {
-  const {games, setGames, loading, setLoading} = props;
- 
+  const {games, setGames, loading, setLoading, searchGames} = props;
+  
+  if(searchGames){
+    return (
+      <div className='search-games'>
+      {searchGames.map(game => (
+        <div className='game-card' key={game._id}>
+          <div className='game-card-image'>
+            <img src={game.image} alt={game.name} />
+          </div>
+          </div>
+    ))}
+    </div>
+    )}
+  
+    
 
 
   return (
     <div>
       <div className='title'>
-        
         </div>
       <div className='games'>
-        {loading ? <img src={Spinner} alt='spinner' /> : (
+        {searchGames ?  (
+            <div className='game' key={searchGames.id}>
+              <div className='game-image'>
+                <img src={searchGames.image} alt={searchGames.name} />
+              </div>
+              <div className='game-info'>
+                <div className='game-title'>
+                  <h3>{searchGames.name}</h3>
+                </div>
+                <div className='game-description'>
+                  <p>{searchGames.description}</p>
+                </div>
+                <div className='game-release'>
+                  <p>{searchGames.releaseDate}</p>
+                </div>
+                <div className='game-trailer'>
+                  <a href={searchGames.trailer} target='_blank'>
+                    <FontAwesomeIcon icon={faHeart} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ) : loading ? <img src={Spinner} alt='spinner' /> : (
           games.map(item => {
             return (
               <div className='game-list'>
@@ -32,9 +67,9 @@ const Games = (props) => {
               </div>
               </div>
             )
-          })
-        )
-        }
+            })
+        )} 
+        
       </div>
     </div>
   )

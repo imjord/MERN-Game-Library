@@ -32,6 +32,17 @@ const GameController = {
             }
         }
         )
+    },
+    // get game by name
+    getGameByName(req,res) {
+        Games.find({name: req.params.name}).then(results => {
+            res.json(results)
+        }).catch(err => {
+            if(err){
+                console.log(err)
+            }
+        }
+        )
     }
 
 
