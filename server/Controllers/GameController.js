@@ -43,6 +43,16 @@ const GameController = {
             }
         }
         )
+    },
+    // get game by trending 
+    getTrending(req,res) {
+        Games.find({isTrending: true}).then(results => {
+            res.json(results)
+        }).catch(err => {
+            if(err){
+                console.log(err)
+            }
+        })
     }
 
 
