@@ -29,15 +29,15 @@ const Navbar = () => {
                       <a href='/'>Games</a>
                       <a href='/'>Categories</a>
                     </div>}
-                    <a href='#'  >Library</a>
+                    <Link to='/library'>Library</Link>
                     
-                    <a href='#'  >About</a>
+                    <Link to='/about'>About</Link>
                     </div>
 
                     <div className='global-links'>
                     <div className='global-link'>
-                        <a href='#'>Login</a>
-                        <a href='#'>Sign Up</a>
+                    <Link to='/login'>Login</Link>
+                    <Link to='/register'>Sign up</Link>
                     </div>
                 </div>
                 </div>

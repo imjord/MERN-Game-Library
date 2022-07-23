@@ -3,24 +3,26 @@ import Spinner from '../assets/spinner.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Search from './Search'
 
 
 const Games = (props) => {
-  const {clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
+  const {getTrending, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
   
-  if(searchGames){
-    return (
-      <div className='search-games'>
-      {searchGames.map(game => (
-        <div className='game-card' key={game._id}>
-          <div className='game-card-image'>
-            <img src={game.image} alt={game.name} />
-          </div>
-          </div>
-    ))}
-    </div>
-    )}
+   
+  // if(searchGames){
+  //   return (
+  //     <div className='search-games'>
+  //     {searchGames.map(game => (
+  //       <div className='game-card' key={game._id}>
+  //         <div className='game-card-image'>
+  //           <img src={game.image} alt={game.name} />
+  //         </div>
+  //         </div>
+  //   ))}
+  //   </div>
+  //   )}
   
     
 

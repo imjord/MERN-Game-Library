@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom';
 
 const Search = (props) => {
   const {searchGamesFunction, clearSearch, searchGames, loading} = props;
@@ -24,7 +25,7 @@ const Search = (props) => {
         <div>
             <div>
                 <div className='tags'>
-                <span>Trending</span>
+                <Link to='/trending'><span>Trending</span></Link>
       
             <span>PC</span>
             <span>PS4</span>
