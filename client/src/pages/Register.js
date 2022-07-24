@@ -1,6 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
 
 const Register = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const response = await axios.post("http://localhost:3001/api/users", {
+        username: username,
+        password: password
+    });
+
+    console.log(response);
+    setPassword('');
+    setUsername('');
+
+}
+  
+
   return (
     <div>
       <div>
@@ -10,10 +28,10 @@ const Register = () => {
         <form>
           <div>
             <label>Username</label>
-            <input type="text" />
+            <input value={username}  onChange={(e) => {setUsername(e.target.value)}} type="text" />
             <label>Password</label>
-            <input type="password" />
-            <button>Sign up</button>
+            <input value={password} type="password" onChange={(e) => {setPassword(e.target.value)}} />
+            <button type='submit' onClick={handleSubmit}> Sign up! </button>
         </div>
         </form>
       </div>
