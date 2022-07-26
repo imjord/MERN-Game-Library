@@ -21,7 +21,7 @@ const UserController = {
 
         newUser.save().then(
             results => {
-                res.json(results)
+                res.json({message: "User Created!", results: results})
             }).catch(err => {
                 if(err){
                     console.log(err);

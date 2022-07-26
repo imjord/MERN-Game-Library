@@ -3,11 +3,11 @@ import React from 'react'
 const Login = () => {
   return (
     <div>
-      <div>
+      <div div style={{color : 'white'}}>
         <h1>Login</h1>
       </div>
       <div>
-        <form>
+        <form div style={{color : 'white'}}>
           <div>
             <label>Username</label>
             <input type="text" />
