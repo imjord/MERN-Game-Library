@@ -5,6 +5,7 @@ const GameController = {
     // get all games 
     getAllGames(req,res) {
         Games.find().then(results => {
+            console.log(req.session.user);
             res.json(results)
         }).catch(err => {
             if(err){

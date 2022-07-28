@@ -19,6 +19,10 @@ const UserController = {
             password: req.body.password
         })
 
+        // save the new user to a session
+        req.session.user = newUser.username;
+        console.log(req.session.user);
+
         newUser.save().then(
             results => {
                 res.json({message: "User Created!", results: results})
@@ -28,7 +32,12 @@ const UserController = {
                 }
             }
         )
+    },
+    // message to library page
+    getLibrary(req,res){
+        res.send('Welcome to your library!')
     }
+    
 }
 
 

@@ -10,7 +10,13 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    // user game library
+    library: [{
+        type: Schema.Types.ObjectId,
+        ref: "Games"
+    }]
+
 });
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
