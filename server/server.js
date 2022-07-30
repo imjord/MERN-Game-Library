@@ -8,6 +8,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const UserRoutes = require('./routes/UserRoutes');
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+require('./config/passport')(passport);
 
 app.use(cors());
 app.use(express.json());
@@ -23,10 +25,13 @@ app.use(session({
 }));
 
 
+// passport middleware 
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
-app.use(cookieParser(('secretkey')));
+app.use(cookieParser(('secret')));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

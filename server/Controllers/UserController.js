@@ -1,3 +1,4 @@
+const passport = require('passport');
 const User = require('../models/User');
 
 const UserController = {
@@ -36,6 +37,23 @@ const UserController = {
     // message to library page
     getLibrary(req,res){
         res.send('Welcome to your library!')
+    },
+    // login page passport authentication
+    loginUser(req,res, next){
+        passport.authenticate('local', (err, user, info) => {
+            if(err){
+                console.log(err);
+            }
+            if(user){
+                req.session.user = user.username;
+                console.log(req.session.user, "logged in", user.username);
+                res.json({message: "User Logged In!", user: user})
+            }
+            else{
+                res.json({message: "User Not Found!"})
+            }
+        }
+        )(req,res, next);
     }
     
 }
