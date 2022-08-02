@@ -29,6 +29,7 @@ function App() {
   const searchGamesFunction = async (search) => {
     setLoading(true);
     const res = await axios.get(`http://localhost:3001/api/games/${search}`);
+    console.log(res);
     setGames(res.data);
     setLoading(false);
   }

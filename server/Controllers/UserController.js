@@ -45,9 +45,10 @@ const UserController = {
                 console.log(err);
             }
             if(user){
-                req.session.user = user.username;
-                console.log(req.session.user, "logged in", user.username);
-                res.json({message: "User Logged In!", user: user})
+                req.session.user = user.username
+                req.session.library = user.library
+                res.json({message: "User Logged In!", session: req.session})
+                
             }
             else{
                 res.json({message: "User Not Found!"})

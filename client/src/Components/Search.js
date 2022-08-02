@@ -9,7 +9,8 @@ const Search = (props) => {
     e.preventDefault();
     if(search === '') {
       alert('Please enter a search term');
-    } else {
+    } 
+    else {
       searchGamesFunction(search);
        setSearch('');
     }

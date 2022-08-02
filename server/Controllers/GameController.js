@@ -6,6 +6,7 @@ const GameController = {
     getAllGames(req,res) {
         Games.find().then(results => {
             console.log(req.session.user);
+            console.log(req.session);
             res.json(results)
         }).catch(err => {
             if(err){
@@ -37,7 +38,13 @@ const GameController = {
     // get game by name
     getGameByName(req,res) {
         Games.find({name: req.params.name}).then(results => {
+            console.log(results);
+            if(results.length === 0){
+                res.json({message: "Game Not Found! Try another Search term"})
+            } else {
+
             res.json(results)
+            }
         }).catch(err => {
             if(err){
                 console.log(err)
@@ -49,6 +56,7 @@ const GameController = {
     getTrending(req,res) {
         Games.find({isTrending: true}).then(results => {
             res.json(results)
+            
         }).catch(err => {
             if(err){
                 console.log(err)
