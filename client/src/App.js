@@ -68,6 +68,14 @@ function App() {
     e.preventDefault();
   }
 
+  // add like 
+  const addLike = async (gameid) => {
+    const response = await axios.post(`http://localhost:3001/api/users/addgame`, {
+      _id: gameid
+    }, {withCredentials: true});
+    console.log(response);
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -87,7 +95,7 @@ function App() {
           {/* put nav and search in app.js ? */}
            {/* routes */}
            <Routes>
-          <Route path="/"  element={<Home searchGamesFunction={searchGamesFunction}  clearSearch={clearSearch} games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
+          <Route path="/"  element={<Home searchGamesFunction={searchGamesFunction} addLike={addLike}  clearSearch={clearSearch} games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
           <Route path="/games/details/:id" element={<Game getSingleGame={getSingleGame} loading={loading} setLoading={setLoading} singleGame={singleGame}  />} />
           <Route path="/about" element={<About/>} />
           <Route path="/login" element={<Login handleLogin={handleLogin} msg={msg} setMsg={setMsg} username={username} setUsername={setUsername} password={password} setPassword={setPassword} loggedIn={loggedIn} /> } />

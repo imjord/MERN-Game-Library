@@ -8,7 +8,7 @@ import Search from './Search'
 
 
 const Games = (props) => {
-  const {getTrending, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
+  const {getTrending,addLike, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
   
    
   return (
@@ -19,7 +19,7 @@ const Games = (props) => {
           games.map(item => {
             return (
               <div className='game-list'>
-                <FontAwesomeIcon id='heart' icon={faHeart} /> 
+                <FontAwesomeIcon onClick={() => addLike(item._id)}  id='heart' icon={faHeart} /> 
               <div key={item._id}>
                 <h2>{item.name}</h2>
                
