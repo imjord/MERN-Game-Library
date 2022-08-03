@@ -1,25 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, isLoggedIn] = useState(false);
-  const [msg, setMsg] = useState('');
+const Login = (props) => {
+  const {handleLogin, password, setPassword, username, setUsername, msg, setMsg, loggedIn} = props;
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3001/api/users/login", {
-      username: username,
-      password: password
-      
-    });
-    setMsg(response.data.message);
-    console.log(response.data);
     
-    isLoggedIn(true);
-
+    handleLogin();
+    console.log(loggedIn)
 
   }
 

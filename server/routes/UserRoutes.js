@@ -8,6 +8,9 @@ router.post('/login', loginUser);
 router.get('/library', requireAuth, getLibrary);
 router.get('/', getAllUsers);
 router.post('/', createUser);
+router.get('/session', (req, res) => {
+    res.send(req.session.user);
+});
 router.get('/logout', (req,res) => {
     req.session.destroy((err) => {
         if(err) {

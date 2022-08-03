@@ -11,7 +11,8 @@ const Register = () => {
     const response = await axios.post("http://localhost:3001/api/users", {
         username: username,
         password: password
-    });
+    },
+    {withCredentials: true});
 
     console.log(response);
     setMsg(response.data.message);

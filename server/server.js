@@ -11,19 +11,23 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 require('./config/passport')(passport);
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
-    resave: false,
+    resave: true,
     cookie: {
         httpOnly: true,
         maxAge: 3600000
     }
 }));
 
+app.use(cookieParser("secret"));
 
 // passport middleware 
 app.use(passport.initialize());
