@@ -5,7 +5,9 @@ const UserController = {
 
     // get all users 
     getAllUsers(req,res){
-        User.find().then(results => {
+        // populate the user with their library
+
+        User.find().populate('library').then(results => {
             res.json(results)
         }).catch(err => {
             if(err){
@@ -55,6 +57,40 @@ const UserController = {
             }
         }
         )(req,res, next);
+    },
+
+    // logout page
+    logoutUser(req,res){
+        req.session.destroy((err) => {
+            if(err){
+                console.log(err);
+            } else {
+                res.clearCookie('session').send('logout complete')
+            }
+        }
+    )
+    },
+    // like a game add to user library
+    addGame(req,res){
+        User.findOneAndUpdate({username: req.session.user}, {$push: {library: req.body._id}}, {new: true}).then(results => {
+            res.json(results)
+        }).catch(err => {
+            if(err){
+                console.log(err);
+            }
+        }
+    )
+    },
+    // get users library
+    getLibrary(req,res){
+        User.findOne({username: req.session.user}).then(results => {
+            res.json(results)
+        }).catch(err => {
+            if(err){
+                console.log(err);
+            }
+        }
+    )
     }
     
 }
