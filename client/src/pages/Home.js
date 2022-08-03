@@ -4,17 +4,17 @@ import Games from '../Components/Games';
 
 
 const Home = (props) => {
-    const {getTrending, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, addLike} = props;
+    const {getTrending, loggedIn, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, addLike} = props;
 
    
-
+    console.log(loggedIn);
 
   return (
     <div className="App">
       <main>
         <div className='title'>
           <div>
-            <Games getTrending={getTrending} searchGamesFunction={searchGamesFunction} games={games} addLike={addLike} setGames={setGames} loading={loading} setLoading={setLoading}  />
+            <Games loggedIn={loggedIn} getTrending={getTrending} searchGamesFunction={searchGamesFunction} games={games} addLike={addLike} setGames={setGames} loading={loading} setLoading={setLoading}  />
             </div>
             </div>
           </main>

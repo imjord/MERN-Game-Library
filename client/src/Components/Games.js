@@ -8,8 +8,8 @@ import Search from './Search'
 
 
 const Games = (props) => {
-  const {getTrending,addLike, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
-  
+  const {getTrending, loggedIn, addLike, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
+  console.log(loggedIn);
    
   return (
     <div>

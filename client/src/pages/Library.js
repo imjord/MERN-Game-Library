@@ -6,21 +6,11 @@ const Library = (props) => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/users/library', {withCredentials: true})
-      .then(response => {
-        console.log(response)
-        setMsg(response.data)
-        console.log(loggedIn)
-      }).catch(err => {
-        console.log(err)
-        console.log(err.response.data.message)
-        setMsg(err.response.data.message)
-      }
-    )
+    console.log(loggedIn);
   })
   return (
     <div>
-    {loggedIn ? <div> youre logged in </div> : <div>{msg}</div>}
+    {loggedIn ? <div> youre logged in </div> : <div> Log in and add games you like to your library!</div>}
    </div>
   )
 }
