@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-const Login = (props) => {
-  const {handleLogin, password, setPassword, username, setUsername, msg, setMsg} = props;
-  const [loggedIn, isLoggedIn] = useState(false);
+
+
+const Login = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [msg, setMsg] = useState('');
   
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.post("http://localhost:3001/api/users/login",
@@ -21,14 +22,13 @@ const Login = (props) => {
   setMsg(response.data.message);
   console.log(response.data);
   
-  isLoggedIn(true);
 }
 
   return (
     <div>
       <div  style={{color : 'white'}}>
         <h1>Login</h1>
-        {msg}
+        {msg ? <p>{msg}</p> : null}
       </div>
       <div>
         <form  style={{color : 'white'}}>

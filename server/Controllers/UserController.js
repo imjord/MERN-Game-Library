@@ -36,10 +36,7 @@ const UserController = {
             }
         )
     },
-    // message to library page
-    getLibrary(req,res){
-        res.send('Welcome to your library!')
-    },
+   
     // login page passport authentication
     loginUser(req,res, next){
         passport.authenticate('local', (err, user, info) => {
@@ -82,8 +79,8 @@ const UserController = {
     )
     },
     // get users library
-    getLibrary(req,res){
-        User.findOne({username: req.session.user}).then(results => {
+    getLibrary(req,res){ 
+        User.findOne({username: req.session.user}).populate('library').then(results => {
             res.json(results)
         }).catch(err => {
             if(err){
