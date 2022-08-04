@@ -148,11 +148,15 @@ nav {
   font-size: 20px;
 }
 
+a {
+  text-decoration: none;
+}
 .search-bar div  {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  
   
 }
 
@@ -358,6 +362,77 @@ button:hover {
   display: none;
 }
 
+/* modal msg */
+/* .remove {
+  display: block;
+  position: absolute;
+  color: white;
+  background-color: rgb(49, 49, 49);
+
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+} */
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 30px auto;
+  background-color: rgb(49, 49, 49);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  width: 500px;
+
+
+}
+.form div {
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+#form-header {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding: 20px;
+}
+
+label{
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
 /* meida quireies */
 
 @media only screen and (max-width: 600px) {
@@ -437,6 +512,7 @@ button:hover {
     background-color: black;
   }
 }
+
 
 
 /* animation */

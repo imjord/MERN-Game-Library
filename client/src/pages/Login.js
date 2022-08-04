@@ -33,12 +33,14 @@ const Login = () => {
   return (
     <div>
       <div  style={{color : 'white'}}>
-        <h1>Login</h1>
+        
         {msg ? <p>{msg}</p> : null}
       </div>
-      <div>
-        <form  style={{color : 'white'}}>
+      <div className='form-wrapper'>
+        
+        <form className='form'  style={{color : 'white'}}>
           <div>
+          <h1 id='form-header'>Login</h1>
             <label>Username</label>
             <input type="text" value={username} id='username' onChange={(e) => setUsername(e.target.value)} />
             <label>Password</label>

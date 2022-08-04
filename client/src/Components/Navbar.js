@@ -9,8 +9,10 @@ import Categories from '../pages/Categories'
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const { loggedIn, setLoggedIn } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen)
+  const toggleMobile = () => setMobileOpen(!mobileOpen)
 
   const logout = async () => {
     // delete local storage
@@ -47,8 +49,8 @@ const Navbar = (props) => {
               <h2>Imjord Games </h2>
               <p id='gameicon'> <FontAwesomeIcon icon={faGamepad} /> </p>
                 </div>
-                <FontAwesomeIcon icon={faBars} onClick={toggle} id='bars' />
-                {isOpen && <div  className='dropdown-mobile'> 
+                <FontAwesomeIcon icon={faBars} onClick={toggleMobile} id='bars' />
+                {mobileOpen && <div  className='dropdown-mobile'> 
                       <a href='/'>Games</a>
                       <a href='/library'>Library</a>
                       {loggedIn ? <a onClick={logout}> <Link to='/logout'>Logout</Link> </a> : <div>

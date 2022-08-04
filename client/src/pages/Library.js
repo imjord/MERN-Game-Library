@@ -6,6 +6,32 @@ const Library = (props) => {
   const [errorMsg, setErrorMsg] = useState(false);
   const [libraryMsg, setLibraryMsg] = useState('');
   const [library, setLibrary] = useState([]);
+  const [removeGameMsg, setRemoveGameMsg] = useState('');
+
+
+  const removeGame = async (gameid) => {
+    const response = await axios.put(`http://localhost:3001/api/users/remove`,{
+      _id: gameid
+    }, {withCredentials: true});
+    
+    console.log(response);
+    setRemoveGameMsg(response.data.message);
+    
+    
+    // setTimeout(() => {
+    //   setRemoveGameMsg('');
+    // }, 2000);
+    
+    // }).catch(err => {
+    //   setLibraryMsg(err.response.data.msg)
+    // }).finally(() => {
+    //   setTimeout(() => {
+    //     setLibraryMsg('')
+    //   }, 2000)
+    // }
+    // )
+  
+  }
 
 
   useEffect(() => {
@@ -15,6 +41,8 @@ const Library = (props) => {
     } else {
       setLoggedIn(false)
     }
+
+    setRemoveGameMsg(false)
     
     const getLibrary =  () => {
       axios.get('http://localhost:3001/api/users/library', {
@@ -33,7 +61,7 @@ const Library = (props) => {
       )
     }
         getLibrary();
-  }, [] );
+  }, [removeGameMsg] );
 
 
 
@@ -43,18 +71,19 @@ const Library = (props) => {
     <div>
       {errorMsg ? <p>{libraryMsg}</p> : <div> 
         Your Game Library:
+        
         {library.length <= 0 ? <p>You have no games in your library!</p> :
         <div className='games'>{library.map(game => {
           return (
             <div className='game-list'>
               <div key={game._id}>
                 <h2>{game.name}</h2>
-               
+                {/* {removeGameMsg ? <p className='remove'>{removeGameMsg}</p> : null} */}
                 <img className='game-image' src={`assets/images/${game.image}`} alt={game.name} />
                 
                 <p>{game.category}</p>
                 
-                <button>Remove Game</button>
+                <button onClick={() => removeGame(game._id)}>Remove Game</button>
               </div>
               </div>
         )

@@ -30,11 +30,12 @@ setTimeout(() => {
     <div>
       <div style={{color : 'white'}}>
         {msg}
-        <h1>Register</h1>
+        
       </div>
-      <div>
-        <form style={{color : 'white'}}>
+      <div className='form-wrapper'>
+        <form className='form' style={{color : 'white'}}>
           <div>
+          <h1 id='form-header'>Register</h1>
             <label>Username</label>
             <input value={username}  onChange={(e) => {setUsername(e.target.value)}} type="text" />
             <label>Password</label>
