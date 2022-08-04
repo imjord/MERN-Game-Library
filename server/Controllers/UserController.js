@@ -91,6 +91,17 @@ const UserController = {
             }
         }
     )
+    },
+    // remove game from users library
+    removeGame(req,res){
+        User.findOneAndUpdate({username: req.session.user}, {$pull: {library: req.body._id}}, {new: true}).then(results => {
+            res.json(results)
+        }).catch(err => {
+            if(err){
+                console.log(err);
+            }
+        }
+    )
     }
     
 }

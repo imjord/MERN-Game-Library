@@ -27,7 +27,7 @@ const Games = (props) => {
           games.map(item => {
             return (
               <div className='game-list'>
-                <FontAwesomeIcon onClick={() => addLike(item._id)}  id='heart' icon={faHeart} /> 
+                {loggedIn ? <FontAwesomeIcon onClick={() => addLike(item._id)}  id='heart' icon={faHeart} /> : null} 
               <div key={item._id}>
                 <h2>{item.name}</h2>
                

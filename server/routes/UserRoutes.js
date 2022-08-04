@@ -1,9 +1,10 @@
 const requireAuth = require('../config/auth');
-const { getAllUsers, createUser, getLibrary, loginUser, addGame } = require('../Controllers/UserController');
+const { getAllUsers, createUser, getLibrary, loginUser, addGame, removeGame } = require('../Controllers/UserController');
 
 const router = require('express').Router();
 
-router.post('/addgame', addGame);
+router.put('/remove', requireAuth, removeGame);
+router.post('/addgame', requireAuth, addGame);
 router.post('/login', loginUser);
 router.get('/library', requireAuth, getLibrary);
 router.get('/', getAllUsers);

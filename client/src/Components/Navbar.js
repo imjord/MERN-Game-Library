@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGamepad } from '@fortawesome/free-solid-svg-icons'
+import { faGamepad, faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Categories from '../pages/Categories'
+
+
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const { loggedIn, setLoggedIn } = props;
@@ -19,12 +21,12 @@ const Navbar = (props) => {
   }
 
 
-  setTimeout(() => {
+  // setTimeout(() => {
 
-    if (isOpen) {
-      setIsOpen(false)
-    }
-  }, 5000)
+  //   if (isOpen) {
+  //     setIsOpen(false)
+  //   }
+  // }, 5000)
 
   useEffect(() => {
     console.log('here')
@@ -34,6 +36,7 @@ const Navbar = (props) => {
       setLoggedIn(true)
     } else {
       setLoggedIn(false)
+      // isOpen ? setIsOpen(false) : setIsOpen(true)
     }
   }, [])
 
@@ -44,7 +47,18 @@ const Navbar = (props) => {
               <h2>Imjord Games </h2>
               <p id='gameicon'> <FontAwesomeIcon icon={faGamepad} /> </p>
                 </div>
+                <FontAwesomeIcon icon={faBars} onClick={toggle} id='bars' />
+                {isOpen && <div  className='dropdown-mobile'> 
+                      <a href='/'>Games</a>
+                      <a href='/library'>Library</a>
+                      {loggedIn ? <a onClick={logout}> <Link to='/logout'>Logout</Link> </a> : <div>
+                      <a href='/login'>Login</a>
+                      <a href='/register'>Register</a> 
+                      </div>
+                      }
+                    </div>}
                 <div className='nav-links'>
+                  
                     <div className='main-links'>
                     <a href='#' id='store'  onClick={toggle}>Store</a>
                     {isOpen && <div  className='dropdown'> 
