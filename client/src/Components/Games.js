@@ -8,9 +8,17 @@ import Search from './Search'
 
 
 const Games = (props) => {
-  const {getTrending, loggedIn, addLike, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
+  const { setLoggedIn,getTrending, loggedIn, addLike, clearSearch, searchGamesFunction, games, setGames, loading, setLoading, searchGames} = props;
   console.log(loggedIn);
-   
+  useEffect(() => {
+  
+    // check local storage for logged in
+    if (localStorage.getItem('loggedIn') == 'true') {
+      setLoggedIn(true)
+    } else {
+      setLoggedIn(false)
+    }
+  }, [])
   return (
     <div>
        <Search searchGamesFunction={searchGamesFunction} clearSearch={clearSearch}  />

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -7,6 +8,7 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [msg, setMsg] = useState('');
+    const [navigate, setNavigate] = useState(false);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +23,11 @@ const Login = () => {
   );
   setMsg(response.data.message);
   console.log(response.data);
+  // set logged in to local storage
+  localStorage.setItem('loggedIn', 'true');
   
+  setNavigate(true);
+
 }
 
   return (
@@ -40,6 +46,7 @@ const Login = () => {
             <button type='submit' onClick={handleSubmit} >Login</button>
         </div>
         </form>
+        {navigate ? <Navigate to='/' /> : null}
       </div>
     </div>
   )

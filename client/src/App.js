@@ -21,7 +21,7 @@ function App() {
   const [msg, setMsg] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [loggedIn, setLoggedIn] = useState(false);
 
 
   const getSingleGame = async (id) => {
@@ -67,8 +67,12 @@ function App() {
   }
 
   useEffect(() => {
-    
-
+    // check local storage for logged in
+    if (localStorage.getItem('loggedIn') == 'true') {
+      setLoggedIn(true)
+    } else {
+      setLoggedIn(false)
+    }
     
     const fetchData = async () => {
       setLoading(true);
@@ -83,22 +87,18 @@ function App() {
 
   return (
     <BrowserRouter>
-     <Navbar />
-    
+     <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
           {/* put nav and search in app.js ? */}
            {/* routes */}
-           
-
-          
            <Routes>
-          <Route path="/"  element={<Home searchGamesFunction={searchGamesFunction} addLike={addLike}  clearSearch={clearSearch} games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
-          <Route path="/games/details/:id" element={<Game getSingleGame={getSingleGame} loading={loading} setLoading={setLoading} singleGame={singleGame}  />} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/"  element={<Home loggedIn={loggedIn} setLoggedIn={setLoggedIn}  searchGamesFunction={searchGamesFunction} addLike={addLike}  clearSearch={clearSearch} games={games}  setGames={setGames} loading={loading} setLoading={setLoading}  />} />
+          <Route path="/games/details/:id" element={<Game loggedIn={loggedIn} setLoggedIn={setLoggedIn}  getSingleGame={getSingleGame} loading={loading} setLoading={setLoading} singleGame={singleGame}  />} />
+          <Route path="/about" element={<About loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/login" element={<Login  msg={msg} setMsg={setMsg} username={username} setUsername={setUsername} password={password} setPassword={setPassword} /> } />
           <Route path="/register" element={<Register/>} />
           <Route path='*' element={<div>404</div>} />
-          <Route path='/library' element={<Library msg={msg} setMsg={setMsg}   />} />
-          <Route path='/trending' element={<Trending  getTrending={getTrending} games={games} setGames={setGames}/> } />
+          <Route path='/library' element={<Library msg={msg} setMsg={setMsg} loggedIn={loggedIn} setLoggedIn={setLoggedIn}   />} />
+          <Route path='/trending' element={<Trending  getTrending={getTrending} games={games} setGames={setGames} loggedIn={loggedIn} setLoggedIn={setLoggedIn} /> } />
           </Routes>
        
      

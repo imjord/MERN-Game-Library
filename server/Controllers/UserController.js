@@ -23,12 +23,14 @@ const UserController = {
         })
 
         // save the new user to a session
-        req.session.user = newUser.username;
-        console.log(req.session.user);
+        // req.session.user = newUser.username;
+        // console.log(req.session.user);
 
         newUser.save().then(
             results => {
                 res.json({message: "User Created!", results: results})
+                res.redirect('/');
+
             }).catch(err => {
                 if(err){
                     console.log(err);
@@ -47,6 +49,7 @@ const UserController = {
                 req.session.user = user.username
                 req.session.library = user.library
                 res.json({message: "User Logged In!", session: req.session})
+                
                 
             }
             else{
