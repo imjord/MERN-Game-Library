@@ -1,0 +1,22 @@
+{
+  "name": "mern-game-library-ecom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "cd server && npm run seed",
+    "start:prod": "cd server && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjord/MERN-Game-Library-Ecom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjord/MERN-Game-Library-Ecom/issues"
+  },
+  "homepage": "https://github.com/imjord/MERN-Game-Library-Ecom#readme"
+}
