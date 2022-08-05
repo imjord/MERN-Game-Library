@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/reactGameDB');
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/reactGameDB');
 
 
 module.exports = mongoose.connection;
