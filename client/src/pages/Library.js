@@ -1,6 +1,7 @@
 import React, {useEffect, useState, } from 'react'
 import axios from 'axios'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 const Library = (props) => {
   const {handleLogin, password, setPassword, username, setUsername, msg, setMsg, loggedIn, setLoggedIn} = props;
   const [errorMsg, setErrorMsg] = useState(false);
@@ -69,10 +70,12 @@ const Library = (props) => {
   return (
     
     <div>
-      {errorMsg ? <p>{libraryMsg}</p> : <div> 
-        Your Game Library:
+      {errorMsg ? <div className='msg-div'> <p className='library-p'>{libraryMsg}</p>
+      <FontAwesomeIcon icon={faTriangleExclamation} className='library-icon' />
+       </div> : <div> 
+       
         
-        {library.length <= 0 ? <p>You have no games in your library!</p> :
+        {library.length <= 0 ? <p className='library-p'>You have no games in your library!</p> :
         <div className='games'>{library.map(game => {
           return (
             <div className='game-list'>

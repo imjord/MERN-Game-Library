@@ -69,7 +69,7 @@ const Navbar = (props) => {
                     </div>}
                     <Link to='/library'>Library</Link>
                     
-                    <Link to='/about'>About</Link>
+                    {/* <Link to='/about'>About</Link> */}
                     </div>
                     {loggedIn ? <button onClick={logout}> <Link to='/logout'>Logout</Link> </button> : 
                     <div className='global-links'>

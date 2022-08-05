@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Library from './pages/Library';
 import Trending from './pages/Trending';
+import Logout from './pages/Logout';
 
 
 
@@ -97,6 +98,7 @@ function App() {
           <Route path="/login" element={<Login  msg={msg} setMsg={setMsg} username={username} setUsername={setUsername} password={password} setPassword={setPassword} /> } />
           <Route path="/register" element={<Register/>} />
           <Route path='*' element={<div>404</div>} />
+          <Route path="/logout" element={<Logout />} />
           <Route path='/library' element={<Library msg={msg} setMsg={setMsg} loggedIn={loggedIn} setLoggedIn={setLoggedIn}   />} />
           <Route path='/trending' element={<Trending  getTrending={getTrending} games={games} setGames={setGames} loggedIn={loggedIn} setLoggedIn={setLoggedIn} /> } />
           </Routes>

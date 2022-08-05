@@ -209,6 +209,29 @@ a {
   
 }
 
+.msg-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.library-p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+}
+
+.library-icon {
+  margin: 20px 10px;
+  color: white;
+  font-size: 3.0rem;
+
+}
+
 button {
   background-color: rgb(49, 49, 49);
   border: none;
@@ -510,6 +533,271 @@ input {
   .dropdown-mobile a:hover {
     color: white;
     background-color: black;
+  }
+
+  .library-p {
+    letter-spacing: 5px;
+    margin: 100px 20px 0px 20px;
+
+  }
+  
+  .library-icon {
+    font-size: 9rem;
+    margin-top: 80px;
+
+    
+  }
+
+  .single-game{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-aside div {
+    height: auto;
+  }
+
+  .trailer div iframe {
+    height: auto;
+    width: auto;
+  }
+  .form-wrapper{
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  nav {
+    width: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  #gameicon {
+    display: none;
+    margin-right: 50px;
+    font-size: 30px;
+  }
+
+  #bars {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    font-size: 30px;
+    color: white;
+    margin-top: 40px;
+  }
+
+  #bars:active {
+    animation: punch 1s;
+  }
+  
+  .games {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 25px auto;
+  }
+
+  .game-list {
+    width: auto;
+    margin: 10px;
+  }
+
+ 
+  .search-bar {
+    width: 400px;
+    margin: 10px;
+  }
+  .tags span {
+    display: none;
+  }
+
+  .dropdown-mobile {
+    position: absolute;
+    top: 150px;
+    right: 10%;
+    min-width: 150px;
+    display: flex;
+    color: white;
+    padding: 10px;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  .dropdown-mobile a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .dropdown-mobile a:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .library-p {
+    letter-spacing: 5px;
+    margin: 100px 20px 0px 20px;
+
+  }
+  
+  .library-icon {
+    font-size: 9rem;
+    margin-top: 80px;
+
+    
+  }
+
+  .single-game{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-aside div {
+    height: auto;
+  }
+
+  .trailer div iframe {
+    height: auto;
+    width: auto;
+  }
+  .form-wrapper{
+    width: 100%;
+    
+  }
+  .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  nav {
+    width: 100%;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  #gameicon {
+    display: none;
+    margin-right: 50px;
+    font-size: 30px;
+  }
+
+  #bars {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    font-size: 30px;
+    color: white;
+    margin-top: 40px;
+  }
+
+  #bars:active {
+    animation: punch 1s;
+  }
+  
+  .games {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 25px auto;
+  }
+
+  .game-list {
+    width: auto;
+    margin: 10px;
+  }
+
+ 
+  .search-bar {
+    width: 400px;
+    margin: 10px;
+  }
+  .tags span {
+    display: none;
+  }
+
+  .dropdown-mobile {
+    position: absolute;
+    top: 150px;
+    right: 10%;
+    min-width: 150px;
+    display: flex;
+    color: white;
+    padding: 10px;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  .dropdown-mobile a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .dropdown-mobile a:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .library-p {
+    letter-spacing: 5px;
+    margin: 100px 20px 0px 20px;
+
+  }
+  
+  .library-icon {
+    font-size: 9rem;
+    margin-top: 80px;
+
+    
+  }
+
+  .single-game{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-aside div {
+    height: auto;
+  }
+
+  .trailer div iframe {
+    height: auto;
+    width: auto;
+  }
+  .form-wrapper{
+    width: 100%;
+    
+  }
+  .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
