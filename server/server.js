@@ -11,6 +11,9 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 require('./config/passport')(passport);
 require('dotenv').config()
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
 
 app.use(cors({
     origin: 'http://localhost:3000',

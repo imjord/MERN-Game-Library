@@ -7,10 +7,11 @@
   "license": "ISC",
   "description": "",
   "scripts": {
-    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "seeds": "node config/seeds.js",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "seeds": "node config/seeds.js"
+   
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
