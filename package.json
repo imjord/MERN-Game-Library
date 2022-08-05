@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/imjord/MERN-Game-Library-Ecom/issues"
   },
-  "homepage": "https://github.com/imjord/MERN-Game-Library-Ecom#readme"
+  "homepage": "https://github.com/imjord/MERN-Game-Library-Ecom#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.4.5",
+    "nodemon": "^2.0.19",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
 }
