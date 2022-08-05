@@ -1,4 +1,17 @@
 {
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seeds": "node config/seeds.js",
+    "build": "cd client && npm run build"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-mongo": "^4.6.0",
@@ -11,18 +24,5 @@
     "nodemon": "^2.0.19",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
-  },
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "seeds": "node config/seeds.js",
-    "build": "cd client && npm run build"
-  },
-  "name": "server",
-  "version": "1.0.0",
-  "main": "server.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
