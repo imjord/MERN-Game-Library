@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "seeds": "node config/seeds.js"
+    "seeds": "node config/seeds.js",
+    "build": "cd client && npm run build"
   },
   "name": "server",
   "version": "1.0.0",

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "cd server && npm run seed",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
