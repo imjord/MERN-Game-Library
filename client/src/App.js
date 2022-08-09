@@ -27,7 +27,7 @@ function App() {
 
   const getSingleGame = async (id) => {
     setLoading(true);
-    const res = await axios.get(`http://localhost:3001/api/games/details/${id}`, {withCredentials: true});
+    const res = await axios.get(`/api/games/details/${id}`, {withCredentials: true});
     setSingleGame(res.data);
     console.log(res.data);
     setLoading(false);
@@ -35,7 +35,7 @@ function App() {
 
   const searchGamesFunction = async (search) => {
     setLoading(true);
-    const res = await axios.get(`http://localhost:3001/api/games/${search}`, {withCredentials: true});
+    const res = await axios.get(`/api/games/${search}`, {withCredentials: true});
     console.log(res);
     setGames(res.data);
     setLoading(false);
@@ -48,7 +48,7 @@ function App() {
 
   const getTrending = async () => {
     setLoading(true);
-    const res = await axios.get(`http://localhost:3001/api/games/trending/isTrending`, {withCredentials: true});
+    const res = await axios.get(`/api/games/trending/isTrending`, {withCredentials: true});
     setGames(res.data);
     setLoading(false);
   }
@@ -61,7 +61,7 @@ function App() {
 
   // add like 
   const addLike = async (gameid) => {
-    const response = await axios.post(`http://localhost:3001/api/users/addgame`, {
+    const response = await axios.post(`/api/users/addgame`, {
       _id: gameid
     }, {withCredentials: true});
     console.log(response);
@@ -77,7 +77,7 @@ function App() {
     
     const fetchData = async () => {
       setLoading(true);
-      const result = await axios.get('http://localhost:3001/api/games', {withCredentials: true});
+      const result = await axios.get('/api/games', {withCredentials: true});
       setGames(result.data);
       setLoading(false);
     }

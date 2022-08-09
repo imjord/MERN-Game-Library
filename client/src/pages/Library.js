@@ -11,7 +11,7 @@ const Library = (props) => {
 
 
   const removeGame = async (gameid) => {
-    const response = await axios.put(`http://localhost:3001/api/users/remove`,{
+    const response = await axios.put(`/api/users/remove`,{
       _id: gameid
     }, {withCredentials: true});
     

@@ -17,7 +17,7 @@ const Navbar = (props) => {
   const logout = async () => {
     // delete local storage
    
-    const res = await axios.get('http://localhost:3001/api/users/logout', {withCredentials: true})
+    const res = await axios.get('/api/users/logout', {withCredentials: true})
     localStorage.removeItem('loggedIn');
     setLoggedIn(false)
   }

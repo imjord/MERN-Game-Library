@@ -8,7 +8,7 @@ const Register = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3001/api/users", {
+    const response = await axios.post("/api/users", {
         username: username,
         password: password
     },

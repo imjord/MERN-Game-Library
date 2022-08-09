@@ -12,7 +12,7 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3001/api/users/login",
+    const response = await axios.post("/api/users/login",
    
    {
     username: username,
