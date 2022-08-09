@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo');
 const UserRoutes = require('./routes/UserRoutes');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
+const path = require('path');
 require('./config/passport')(passport);
 require('dotenv').config()
 if (process.env.NODE_ENV === 'production') {
