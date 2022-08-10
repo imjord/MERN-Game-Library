@@ -46,7 +46,7 @@ const Library = (props) => {
     setRemoveGameMsg(false)
     
     const getLibrary =  () => {
-      axios.get('http://localhost:3001/api/users/library', {
+      axios.get('/api/users/library', {
         withCredentials: true
       })
       .then(res => {
