@@ -21,26 +21,28 @@ const Login = () => {
   },
   {withCredentials: true}
   );
-  setMsg(response.data.message);
-  console.log(response.data);
+  if(response.data.message == 'User Not Found!'){
+    setMsg(response.data.message);
+  } else {
   // set logged in to local storage
   localStorage.setItem('loggedIn', 'true');
-  
   setNavigate(true);
-
+  }
 }
 
   return (
     <div>
       <div  style={{color : 'white'}}>
-        
-        {msg ? <p>{msg}</p> : null}
+    
+       
       </div>
       <div className='form-wrapper'>
         
         <form className='form'  style={{color : 'white'}}>
           <div>
+          {msg ? <p className='alert'>{msg}</p> : null}
           <h1 id='form-header'>Login</h1>
+         
             <label>Username</label>
             <input type="text" value={username} id='username' onChange={(e) => setUsername(e.target.value)} />
             <label>Password</label>

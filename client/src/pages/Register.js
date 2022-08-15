@@ -21,20 +21,21 @@ const Register = () => {
 
 }
 
-setTimeout(() => {
-    setMsg('');
-}, 5000);
+// setTimeout(() => {
+//     setMsg('');
+// }, 10000);
   
 
   return (
     <div>
       <div style={{color : 'white'}}>
-        {msg}
+        
         
       </div>
       <div className='form-wrapper'>
         <form className='form' style={{color : 'white'}}>
           <div>
+          <p className='alert-sucess'>{msg} </p>
           <h1 id='form-header'>Register</h1>
             <label>Username</label>
             <input value={username}  onChange={(e) => {setUsername(e.target.value)}} type="text" />

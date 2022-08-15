@@ -456,6 +456,28 @@ input {
   margin: 10px;
 }
 
+
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  color: red;
+  font-size: 2.0rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.alert-sucess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  color: green;
+  font-size: 2.0rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 /* meida quireies */
 
 @media only screen and (max-width: 500px) {
@@ -562,14 +584,28 @@ input {
     width: auto;
   }
   .form-wrapper{
-    width: 100%;
-    
-  }
-  .form {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    margin: 30px auto;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    width: 100%;
+  
+    
+  }
+  .form {
+    margin-top: 20%;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form div {
+    width: 50%;
+    height: 50%;
   }
 }
 
@@ -793,16 +829,38 @@ input {
     width: auto;
   }
   .form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 30px auto;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
     width: 100%;
+  
     
   }
   .form {
-    width: 100%;
+    margin-top: 20%;
+    width: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .form div {
+    width: 50%;
+    height: 50%;
+  }
 }
+
+@media screen and (min-width: 1200px) {
+  .dropdown-mobile {
+    display: none;
+  }
+}
+  
+
 
 
 @media only screen and (max-width: 1200px) {
@@ -909,14 +967,28 @@ input {
     width: auto;
   }
   .form-wrapper{
-    width: 100%;
-    
-  }
-  .form {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 400px;
+    margin: 30px auto;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    width: 100%;
+  
+    
+  }
+  .form {
+    margin-top: 20%;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form div {
+    width: 50%;
+    height: 50%;
   }
 }
 
