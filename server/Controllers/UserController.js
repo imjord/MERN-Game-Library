@@ -17,26 +17,57 @@ const UserController = {
     },
     // CREATE A NEW USER 
     createUser(req,res){
+        const errorMsg = [];
+
         const newUser = new User({
             username: req.body.username,
             password: req.body.password
         })
+        
+        
+        User.findOne({username: newUser.username}).then(user => {
+            if(user){
+                errorMsg.push('Username already exists');
+                res.status(400).json(errorMsg);
+
+            }
+        }) 
+        if(!newUser.username){
+            errorMsg.push('Username is required');
+        }
+        if(!newUser.password){
+            errorMsg.push('Password is required');
+        }
+        if(newUser.username.length < 3){
+            errorMsg.push('Username must be at least 3 characters');
+        }
+        if(newUser.password.length < 6){
+            errorMsg.push('Password must be at least 6 characters');
+        }
+        if(errorMsg.length > 0){
+            res.status(400).json(errorMsg);
+        }else{
+            
+            newUser.save().then(
+                results => {
+                    res.json({message: "User Created!", results: results})
+                    res.redirect('/');
+    
+                }).catch(err => {
+                    if(err){
+                        console.log(err);
+                    }
+                }
+            )
+        }
+
+        
 
         // save the new user to a session
         // req.session.user = newUser.username;
         // console.log(req.session.user);
 
-        newUser.save().then(
-            results => {
-                res.json({message: "User Created!", results: results})
-                res.redirect('/');
-
-            }).catch(err => {
-                if(err){
-                    console.log(err);
-                }
-            }
-        )
+        
     },
    
     // login page passport authentication

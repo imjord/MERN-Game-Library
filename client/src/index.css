@@ -477,8 +477,52 @@ input {
   font-family: 'Roboto', sans-serif;
 }
 
+.error-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-/* meida quireies */
+.error-content {
+  color: black;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*
+
+*********************************************************************************************
+
+
+MEDIA  QUERIES
+
+
+*********************************************************************************************
+*/
 
 @media only screen and (max-width: 500px) {
   nav {
@@ -607,6 +651,12 @@ input {
     width: 50%;
     height: 50%;
   }
+  .alert-sucess{
+    height: 50px;
+  }
+  .alert {
+    height: 50px;
+  }
 }
 
 
@@ -614,6 +664,12 @@ input {
 
 
 @media only screen and (max-width: 600px) {
+  .alert-sucess{
+    height: 50px;
+  }
+  .alert {
+    height: 50px;
+  }
   nav {
     width: 100%;
   }
@@ -726,6 +782,12 @@ input {
 
 
 @media only screen and (max-width: 800px) {
+  .alert-sucess{
+    height: 50px;
+  }
+  .alert {
+    height: 50px;
+  }
   nav {
     width: 100%;
   }
@@ -864,6 +926,12 @@ input {
 
 
 @media only screen and (max-width: 1200px) {
+  .alert-sucess{
+    height: 50px;
+  }
+  .alert {
+    height: 50px;
+  }
   nav {
     width: 100%;
   }

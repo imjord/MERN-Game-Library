@@ -5,19 +5,42 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [msg, setMsg] = useState('');
+  const [error, setError] = useState('');
+  const [modal, setModal] = useState(false);
+  console.log(modal);
+
+  const toggleModal = () => {
+    console.log(modal);
+    setModal(true);
+  }
+
+  const closeModal = () => {
+    console.log(modal);
+
+    setModal(false);
+  }
+
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await axios.post("/api/users", {
+    try {
+      const response = await axios.post("/api/users", {
         username: username,
         password: password
     },
     {withCredentials: true});
-
     console.log(response);
     setMsg(response.data.message);
     setPassword('');
     setUsername('');
+    } catch (err) {
+      console.log(err.response.data);
+      setError(err.response.data);
+      setPassword('');
+      setUsername('');
+      toggleModal();
+    }
+    
 
 }
 
@@ -29,7 +52,14 @@ const Register = () => {
   return (
     <div>
       <div style={{color : 'white'}}>
-        
+        {modal ? <div className='error-modal'>
+          <div className='error-content'>
+          <span onClick={() => closeModal()}class="close">&times;</span>
+          <p>{error.map((item) => {
+            return <p>{item}</p>
+          })} </p>
+          </div>
+          </div> : null }
         
       </div>
       <div className='form-wrapper'>
