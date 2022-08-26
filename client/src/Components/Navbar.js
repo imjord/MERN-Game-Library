@@ -53,7 +53,7 @@ const Navbar = (props) => {
                 {mobileOpen && <div  className='dropdown-mobile'> 
                       <a href='/'>Games</a>
                       <a href='/library'>Library</a>
-                      {loggedIn ? <a onClick={logout}> <Link to='/logout'>Logout</Link> </a> : <div>
+                      {loggedIn ?  <a id='logoutbro' onClick={logout}> <Link id='logoutbrolink' to='/logout'>Logout</Link> </a> : <div className='lolbro'>
                       <a href='/login'>Login</a>
                       <a href='/register'>Register</a> 
                       </div>

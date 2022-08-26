@@ -87,12 +87,13 @@ nav {
   
   position: absolute;
   top: 100px;
-  right: 32%;
+  right: 27%;
   min-width: 160px;
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px;
+  
 }
 
 .dropdown a {
@@ -100,6 +101,7 @@ nav {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+ 
 }
 
 
@@ -513,6 +515,13 @@ input {
   cursor: pointer;
 }
 
+
+#logoutbro {
+  color: white;
+}
+#logoutbrolink {
+  color: white;
+}
 /*
 
 *********************************************************************************************
@@ -575,30 +584,35 @@ MEDIA  QUERIES
   .tags span {
     display: none;
   }
-
+  .lolbro {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .dropdown-mobile {
     position: absolute;
-    top: 150px;
-    right: 10%;
-    min-width: 150px;
+    top: 165px;
+    right: 0%;
+    height: 200px;
+    width: 25%;
     display: flex;
-    color: white;
     padding: 10px;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
+    animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .dropdown-mobile a:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
   }
 
   .library-p {
@@ -720,30 +734,35 @@ MEDIA  QUERIES
   .tags span {
     display: none;
   }
-
+  .lolbro {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .dropdown-mobile {
     position: absolute;
-    top: 150px;
-    right: 10%;
-    min-width: 150px;
+    top: 165px;
+    right: 0%;
+    height: 200px;
+    width: 25%;
     display: flex;
-    color: white;
     padding: 10px;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
+    animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .dropdown-mobile a:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
   }
 
   .library-p {
@@ -839,29 +858,35 @@ MEDIA  QUERIES
     display: none;
   }
 
+  .lolbro {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .dropdown-mobile {
     position: absolute;
-    top: 150px;
-    right: 10%;
-    min-width: 150px;
+    top: 165px;
+    right: 0%;
+    height: 200px;
+    width: 25%;
     display: flex;
-    color: white;
     padding: 10px;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
+    animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .dropdown-mobile a:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
   }
 
   .library-p {
@@ -926,6 +951,7 @@ MEDIA  QUERIES
 
 
 @media only screen and (max-width: 1200px) {
+  
   .alert-sucess{
     height: 50px;
   }
@@ -983,30 +1009,37 @@ MEDIA  QUERIES
     display: none;
   }
 
+  .lolbro {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .dropdown-mobile {
     position: absolute;
-    top: 150px;
-    right: 10%;
-    min-width: 150px;
+    top: 165px;
+    right: 0%;
+    height: 200px;
+    width: 25%;
     display: flex;
-    color: white;
     padding: 10px;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
+    animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .dropdown-mobile a:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
   }
+  
 
   .library-p {
     letter-spacing: 5px;
@@ -1063,6 +1096,29 @@ MEDIA  QUERIES
 
 
 /* animation */
+
+/*  slide in mobile dropdown */
+
+@keyframes slideIn {
+  0% {
+    right: -100%
+  }
+  25% {
+    right: -75%;
+  }
+  50% {
+    right: -50%;
+}
+75% {
+  right: -25%;
+}
+100% {
+  right: 0%;
+}
+
+
+
+}
 
 @keyframes punch {
   0% {
