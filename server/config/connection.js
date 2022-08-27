@@ -5,7 +5,7 @@ require('dotenv').config()
 
 
 
-mongoose.connect("mongodb+srv://imjord:imjord123@cluster0.igc6tbx.mongodb.net/?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGOB,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
