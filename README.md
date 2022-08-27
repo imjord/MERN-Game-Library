@@ -1,5 +1,8 @@
 # ImJord Game Library
 
+![image](https://user-images.githubusercontent.com/82243498/187009890-fe415bf5-ee2e-40d8-b396-ffa03f706e1e.png)
+
+
 
 This is a MERN created project that allows users to log in and add liked games to their library.
 
