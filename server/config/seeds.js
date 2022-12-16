@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Games = require('../models/Games');
 
-mongoose.connect('mongodb://localhost/reactGameDB').then(() => {
+mongoose.connect('mongodb://127.0.0.1:27017/gamelibrary').then(() => {
     console.log('game seeds opened')
 }).catch((err) => {
     console.log(err);

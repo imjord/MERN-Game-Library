@@ -5,7 +5,7 @@ require('dotenv').config()
 
 
 
-mongoose.connect(process.env.MONGOB,{
+mongoose.connect("mongodb://127.0.0.1:27017/gamelibrary",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

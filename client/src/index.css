@@ -27,7 +27,10 @@ code {
 
 nav {
   display: flex;
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+  -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.51);
   padding: 20px;
 }
 
@@ -136,8 +139,9 @@ nav {
   justify-content: center;
   padding: 5px;
   margin: 10px;
-  border-radius: 5px;
-  background-color: rgb(49, 49, 49);
+  border-radius: 10px;
+  background-color: rgba(49, 49, 49, 0.3);
+
   color: white;
   width: 50%;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -179,7 +183,7 @@ a {
 .games {
   
   border-radius: 5px;
-  background-color: rgba(49, 49, 49, 0.8);
+  background-color: rgba(49, 49, 49, 0.3);
   padding: 10px;
   margin: 25px;
   display: flex;
@@ -235,7 +239,8 @@ a {
 }
 
 button {
-  background-color: rgb(49, 49, 49);
+  background-color:   rgba(49, 49, 49, 0.3);
+
   border: none;
   color: white;
   padding: 10px;
@@ -259,7 +264,8 @@ button:hover {
   cursor: pointer;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+
   padding: 5px;
 }
 
@@ -310,7 +316,8 @@ button:hover {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -336,7 +343,8 @@ button:hover {
 } */
 
 .trailer {
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -392,7 +400,8 @@ button:hover {
   display: block;
   position: absolute;
   color: white;
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+
 
   width: 300px;
   height: 200px;
@@ -409,7 +418,8 @@ button:hover {
   align-items: center;
   height: 600px;
   margin: 30px auto;
-  background-color: rgb(49, 49, 49);
+  background-color: rgba(49, 49, 49, 0.3);
+
   border-radius: 5px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   width: 500px;
@@ -522,6 +532,15 @@ input {
 #logoutbrolink {
   color: white;
 }
+
+#logout-btn {
+  background-color: rgba(49, 49, 49, 0.3);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
 /*
 
 *********************************************************************************************
@@ -605,7 +624,8 @@ MEDIA  QUERIES
     padding: 10px;
     z-index: 2;
     flex-direction: column;
-    background-color: rgb(49, 49, 49);
+    background-color: rgba(49, 49, 49, 0.3);
+
     animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
@@ -758,7 +778,8 @@ MEDIA  QUERIES
     display: flex;
     padding: 10px;
     flex-direction: column;
-    background-color: rgb(49, 49, 49);
+    background-color: rgba(49, 49, 49, 0.3);
+
     animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
@@ -885,7 +906,8 @@ MEDIA  QUERIES
     display: flex;
     padding: 10px;
     flex-direction: column;
-    background-color: rgb(49, 49, 49);
+    background-color: rgba(49, 49, 49, 0.3);
+
     animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
@@ -1040,7 +1062,8 @@ MEDIA  QUERIES
     display: flex;
     padding: 10px;
     flex-direction: column;
-    background-color: rgb(49, 49, 49);
+    background-color: rgba(49, 49, 49, 0.3);
+
     animation: slideIn 0.2s ease-in;
   }
   .dropdown-mobile a {
