@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Games = require('../models/Games');
+require('dotenv').config()
 
-mongoose.connect('mongodb://127.0.0.1:27017/gamelibrary').then(() => {
+mongoose.connect(process.env.MONGODBURL).then(() => {
     console.log('game seeds opened')
 }).catch((err) => {
     console.log(err);

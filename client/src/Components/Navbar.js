@@ -46,7 +46,7 @@ const Navbar = (props) => {
     <nav>
         <div className='content'>
             <div className='logo'>
-              <h2>Imjord Games </h2>
+              <h2>Imjord GamesDB </h2>
               <p id='gameicon'> <FontAwesomeIcon icon={faGamepad} /> </p>
                 </div>
                 <FontAwesomeIcon icon={faBars} onClick={toggleMobile} id='bars' />
