@@ -52,7 +52,8 @@ const seedProducts = [
         releaseDate: '2013-09-17',
         platforms: ['PC', 'Playstation 3', 'Playstation 4', 'Xbox 360', 'Xbox One'],
         isTrending: true
-    }
+    } 
+    //seed more games here
 ]
 
 const seedDB = async () => {
