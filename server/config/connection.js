@@ -5,7 +5,7 @@ require('dotenv').config()
 // mongodb://127.0.0.1:27017/gamelibrary
 
 
-mongoose.connect(process.env.MONGODBURL,{
+mongoose.connect("mongodb+srv://imjord:imjord123@cluster0.ciath.mongodb.net/?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

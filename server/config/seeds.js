@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Games = require('../models/Games');
 require('dotenv').config()
 
-mongoose.connect(process.env.MONGODBURL).then(() => {
+mongoose.connect("mongodb+srv://imjord:imjord123@cluster0.ciath.mongodb.net/?retryWrites=true&w=majority").then(() => {
     console.log('game seeds opened')
 }).catch((err) => {
     console.log(err);
