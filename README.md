@@ -33,4 +33,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 MIT
 
 ## LIVE SITE
-https://imjord-games-library.herokuapp.com/
+https://imjordgamesdb.herokuapp.com/
