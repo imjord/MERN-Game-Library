@@ -9,14 +9,13 @@
   
   
   <div align="center">
-<h3 align="center">imjord games</h3>
-  
- <p align="center">
-      add games to your online library
-      <br />
-      <br />
-      <a href="https://github.com/imjord/MERN-Game-Library">View Demo</a>
-      ·
+  <h3 align="center">imjord games</h3>
+<p align="center">
+ ADD GAMES TO AN ONLINE LIBRARY
+<br />
+<br />
+<a href="https://github.com/imjord/MERN-Game-Library">View Demo</a>
+ ·
       <a href="https://github.com/imjord/MERN-Game-Library/issues">Report Bug</a>
       ·
       <a href="https://github.com/imjord/MERN-Game-Library/issues">Request Feature</a>
@@ -56,7 +55,7 @@
   
   
   
-  I created this projected to learn react, passport, and mongodb. I like video games so i decided to make an online library. (not very many games you can add but maybe ill add more in the future!).
+  I created this project to better learn react, passport, node and mongodb!
   
   
   
@@ -67,7 +66,12 @@
   ### Built With
   
   
-  * ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey),* ![image](https://img.shields.io/badge/express, react, javascript, node, mongodb, heroku, passport-{<3-lightgrey)
+   ![image](https://img.shields.io/badge/React-<3-red?style=for-the-badge&logo=appveyor})
+     ![image](https://img.shields.io/badge/Express-<3-red?style=for-the-badge&logo=appveyor})
+     ![image](https://img.shields.io/badge/Node-<3-red?style=for-the-badge&logo=appveyor})
+     ![image](https://img.shields.io/badge/Passport-<3-red?style=for-the-badge&logo=appveyor})
+     ![image](https://img.shields.io/badge/MongoDB-<3-red?style=for-the-badge&logo=appveyor})
+    
   
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -81,7 +85,7 @@
   
   ### Prerequisites
   
- node, mongodb running locally or your own atlas cluster, .env
+ Node, Mongodb running locally or atlas
   
   ### Installation
   
@@ -109,9 +113,9 @@
   
   <!-- USAGE EXAMPLES -->
   ## Usage
-  ![image](https://user-images.githubusercontent.com/82243498/218683037-3a2979ed-1fde-46da-86ca-c99b7ec1b5e2.png)
+  
+  User will either signup or login if an account is already made. they will then add a game to their library which they can also remove from their library! exciting!
 
-     You can log in as a user or sign up and once logged in you can like a video game or view the video games page details. once added to your library you can remove it or leave it there! it will stay once u come back after logging out!.
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
   
   
@@ -119,7 +123,7 @@
   <!-- ROADMAP -->
   ## Roadmap
   
-  - [] add more functionality (filter games, more games)
+  - [] More functionality (filters, more games, add more features).
   
   
   See the [open issues](https://github.com/imjord/MERN-Game-Library/issues) for a full list of future proposed features (and known issues).
