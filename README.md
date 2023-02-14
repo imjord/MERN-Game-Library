@@ -7,15 +7,12 @@
   
   
   
-  <br/>
   
   <div align="center">
-    
+<h3 align="center">imjord games</h3>
   
-    <h3 align="center">imjord games</h3>
-  
-    <p align="center">
-      add games to your online library.
+ <p align="center">
+      add games to your online library
       <br />
       <br />
       <a href="https://github.com/imjord/MERN-Game-Library">View Demo</a>
