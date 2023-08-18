@@ -37,7 +37,9 @@ const getGameById = async (req, res) => {
 };
 const getGameByName = async (req, res) => {
   try {
-    const results = await Games.find({ name: req.params.name });
+    const { name } = req.params;
+
+    const results = await Games.find({ name });
     res.json(results);
   } catch (err) {
     console.error(err);
