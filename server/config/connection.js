@@ -1,13 +1,10 @@
-const mongoose = require('mongoose');
-require('dotenv').config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-
-
-
-mongoose.connect(process.env.MONGO_URI,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+// process.env.MONGO_URI
+mongoose.connect("mongodb://127.0.0.1:27017/testgamelibrary", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
-
 
 module.exports = mongoose.connection;

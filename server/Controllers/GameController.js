@@ -1,71 +1,68 @@
-const Games = require('../models/Games');
+const Games = require("../models/Games");
 
+const getAllGames = async (req, res) => {
+  try {
+    const getGames = await Games.find();
+    res.json(getGames);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching all games." });
+  }
+};
 
-const GameController = {
-    // get all games 
-    getAllGames(req,res) {
-        Games.find().then(results => {
-            console.log(req.session.user);
-            console.log(req.session);
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err)
-            }
-        })
-    },
-    // get games by category
-    getGamesByCategory(req,res) {
-        Games.find({category: req.params.category}).then(results => {
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err)
-            }
-        })
-    },
-    // get game by id
-    getGameById(req,res) {
-        Games.findById({_id: req.params.id}).then(results => {
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err)
-            }
-        }
-        )
-    },
-    // get game by name
-    getGameByName(req,res) {
-        Games.find({name: req.params.name}).then(results => {
-            console.log(results);
-            if(results.length === 0){
-                res.json({message: "Game Not Found! Try another Search term"})
-            } else {
+const getGamesByCategory = async (req, res) => {
+  try {
+    const results = await Games.find({ category: req.params.category });
+    res.json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching game by category." });
+  }
+};
 
-            res.json(results)
-            }
-        }).catch(err => {
-            if(err){
-                console.log(err)
-            }
-        }
-        )
-    },
-    // get game by trending 
-    getTrending(req,res) {
-        Games.find({isTrending: true}).then(results => {
-            res.json(results)
-            
-        }).catch(err => {
-            if(err){
-                console.log(err)
-            }
-        })
-    }
+const getGameById = async (req, res) => {
+  try {
+    const results = await Games.findById({ _id: req.params.id });
+    res.json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching game by id." });
+  }
+};
+const getGameByName = async (req, res) => {
+  try {
+    const results = await Games.find({ name: req.params.name });
+    res.json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching game name." });
+  }
+};
 
+const getTrending = async (req, res) => {
+  try {
+    const results = await Games.find({ isTrending: true });
+    res.json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching trending game." });
+  }
+};
 
-}
-
-
-module.exports = GameController;
+module.exports = {
+  getAllGames,
+  getGameById,
+  getGameByName,
+  getGamesByCategory,
+  getTrending,
+};
