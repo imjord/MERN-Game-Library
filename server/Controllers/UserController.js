@@ -1,141 +1,154 @@
-const passport = require('passport');
-const User = require('../models/User');
+const passport = require("passport");
+const User = require("../models/User");
 
-const UserController = {
+// https - heroku
+// authenticate - done?
+// authorize - done?
+// rate limit - not done
+// error handling - try / catch resstatuss
 
-    // get all users 
-    getAllUsers(req,res){
-        // populate the user with their library
+const getAllUsers = async (req, res) => {
+  try {
+    const results = await User.find().populate("library");
+    res.json(results);
+  } catch (err) {
+    console.log(err);
+    res
+      .status(500)
+      .json({ error: "An error occured whiile fetching all users." });
+  }
+};
 
-        User.find().populate('library').then(results => {
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err);
-            }
-        })
-    },
-    // CREATE A NEW USER 
-    createUser(req,res){
-        const errorMsg = [];
+const createUser = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const errorMsg = [];
 
-        const newUser = new User({
-            username: req.body.username,
-            password: req.body.password
-        })
-        
-        
-        User.findOne({username: newUser.username}).then(user => {
-            if(user){
-                errorMsg.push('Username already exists');
-                res.status(400).json(errorMsg);
-
-            }
-        }) 
-        if(!newUser.username){
-            errorMsg.push('Username is required');
-        }
-        if(!newUser.password){
-            errorMsg.push('Password is required');
-        }
-        if(newUser.username.length < 3){
-            errorMsg.push('Username must be at least 3 characters');
-        }
-        if(newUser.password.length < 6){
-            errorMsg.push('Password must be at least 6 characters');
-        }
-        if(errorMsg.length > 0){
-            res.status(400).json(errorMsg);
-        }else{
-            
-            newUser.save().then(
-                results => {
-                    res.json({message: "User Created!", results: results})
-                    res.redirect('/');
-    
-                }).catch(err => {
-                    if(err){
-                        console.log(err);
-                    }
-                }
-            )
-        }
-
-        
-
-        // save the new user to a session
-        // req.session.user = newUser.username;
-        // console.log(req.session.user);
-
-        
-    },
-   
-    // login page passport authentication
-    loginUser(req,res, next){
-        passport.authenticate('local', (err, user, info) => {
-            if(err){
-                console.log(err);
-            }
-            if(user){
-                req.session.user = user.username
-                req.session.library = user.library
-                res.json({message: "User Logged In!", session: req.session})
-                
-                
-            }
-            else{
-                res.json({message: "User Not Found!"})
-            }
-        }
-        )(req,res, next);
-    },
-
-    // logout page
-    logoutUser(req,res){
-        req.session.destroy((err) => {
-            if(err){
-                console.log(err);
-            } else {
-                res.clearCookie('session').send('logout complete')
-            }
-        }
-    )
-    },
-    // like a game add to user library
-    addGame(req,res){
-        User.findOneAndUpdate({username: req.session.user}, {$push: {library: req.body._id}}, {new: true}).then(results => {
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err);
-            }
-        }
-    )
-    },
-    // get users library
-    getLibrary(req,res){ 
-        User.findOne({username: req.session.user}).populate('library').then(results => {
-            res.json(results)
-        }).catch(err => {
-            if(err){
-                console.log(err);
-            }
-        }
-    )
-    },
-    // remove game from users library
-    removeGame(req,res){
-        User.findOneAndUpdate({username: req.session.user}, {$pull: {library: req.body._id}}, {new: true}).then(results => {
-            res.json({message: "Game removed from library!"})
-        }).catch(err => {
-            if(err){
-                console.log(err);
-            }
-        }
-    )
+    if (!username) {
+      errorMsg.push("Please input a username.");
+    } else if (username.length < 3) {
+      errorMsg.push("Username must be 3 chracters long");
     }
-    
-}
+    if (!password) {
+      errorMsg.push("Please input a password");
+    } else if (password.length < 6) {
+      errorMsg.push("password must be longer than 6 characters");
+    }
 
+    if (errorMsg.length > 0) {
+      return res.status(400).json(errorMsg);
+    }
 
-module.exports = UserController;
+    const existingUser = await User.findOne({ username });
+
+    if (existingUser) {
+      errorMsg.push("Username already exists!");
+      return res.status(400).json(errorMsg);
+    }
+
+    const newUser = new User({
+      username,
+      password,
+    });
+
+    await newUser.save();
+    res.json({
+      message: "User Created You can log in now with your credentials.",
+    });
+  } catch (err) {
+    console.error("Error creating a user:", err);
+    res
+      .status(500)
+      .json({ message: "Internal server error. Please try again later..." });
+  }
+};
+
+// login page passport authentication
+const loginUser = (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      console.log(err);
+    }
+    if (user) {
+      req.session.user = user.username;
+      req.session.library = user.library;
+      return res.json({ message: "User Logged In!", session: req.session });
+    }
+
+    return res.json({ message: "User Not Found!" });
+  })(req, res, next);
+};
+
+const logoutUser = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.clearCookie("session").send("logout complete");
+    }
+  });
+};
+
+const getLibrary = async (req, res) => {
+  try {
+    const results = await User.findOne({ username: req.session.user }).populate(
+      "library"
+    );
+    return res.json(results);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "Unable to get user library" });
+  }
+};
+
+const removeGame = async (req, res) => {
+  try {
+    const username = req.session.user;
+    const gameId = req.body._id;
+
+    const results = await User.findOneAndUpdate(
+      {
+        username,
+      },
+      { $pull: { library: gameId } },
+      { new: true }
+    );
+    return res.json(results);
+  } catch (err) {
+    console.error(err);
+    return res
+      .status(500)
+      .json({ message: "Unable to remove game from library" });
+  }
+};
+
+const addGame = async (req, res) => {
+  try {
+    const username = req.session.user;
+    const gameId = req.body._id;
+
+    const results = await User.findOneAndUpdate(
+      {
+        username,
+      },
+      {
+        $push: { library: gameId },
+      },
+      { new: true }
+    );
+    return res.json(results);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "unable to add game to library" });
+  }
+};
+
+module.exports = {
+  createUser,
+  getAllUsers,
+  loginUser,
+  logoutUser,
+  removeGame,
+  getLibrary,
+  addGame,
+};

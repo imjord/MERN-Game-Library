@@ -54,7 +54,7 @@ db.on("error", () => {
 });
 
 db.once("open", () => {
-  console.log("Connected to MongoDB");
+  console.log("Connected to DB");
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });

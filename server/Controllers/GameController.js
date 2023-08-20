@@ -1,4 +1,5 @@
 const Games = require("../models/Games");
+const validator = require("validator");
 
 const getAllGames = async (req, res) => {
   try {
@@ -39,7 +40,7 @@ const getGameByName = async (req, res) => {
   try {
     const { name } = req.params;
 
-    const results = await Games.find({ name });
+    const results = await Games.find({ name: name });
     res.json(results);
   } catch (err) {
     console.error(err);
