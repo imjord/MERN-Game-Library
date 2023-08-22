@@ -28,7 +28,7 @@ function App() {
       withCredentials: true,
     });
     setSingleGame(res.data);
-    res.data;
+
     setLoading(false);
   };
 
@@ -37,7 +37,7 @@ function App() {
     const res = await axios.get(`/api/games/${search}`, {
       withCredentials: true,
     });
-    res;
+
     setGames(res.data);
     setLoading(false);
   };
@@ -142,7 +142,10 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<div>404</div>} />
-        <Route path="/logout" element={<Logout />} />
+        <Route
+          path="/logout"
+          element={<Logout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+        />
         <Route
           path="/library"
           element={

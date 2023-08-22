@@ -88,9 +88,9 @@ const Library = (props) => {
             <p className="library-p">You have no games in your library!</p>
           ) : (
             <div className="games">
-              {library.map((game) => {
+              {library.map((game, index) => {
                 return (
-                  <div className="game-list" key={game._id}>
+                  <div className="game-list" key={index}>
                     <div>
                       <h2>{game.name}</h2>
                       {/* {removeGameMsg ? <p className='remove'>{removeGameMsg}</p> : null} */}

@@ -48,14 +48,14 @@ const Register = () => {
         {modal ? (
           <div className="error-modal">
             <div className="error-content">
-              <span onClick={() => closeModal()} class="close">
+              <span onClick={() => closeModal()} className="close">
                 &times;
               </span>
-              <p>
-                {error.map((item) => {
-                  return <p>{item}</p>;
+              <div>
+                {error.map((item, index) => {
+                  return <p key={index}>{item}</p>;
                 })}{" "}
-              </p>
+              </div>
             </div>
           </div>
         ) : null}

@@ -38,9 +38,9 @@ const Games = (props) => {
         {loading ? (
           <img src={Spinner} alt="spinner" />
         ) : (
-          games.map((item) => {
+          games.map((item, index) => {
             return (
-              <div className="game-list" key={item._id}>
+              <div className="game-list" key={index}>
                 {loggedIn ? (
                   <FontAwesomeIcon
                     onClick={() => addLike(item._id)}

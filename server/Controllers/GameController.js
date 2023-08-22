@@ -1,5 +1,4 @@
 const Games = require("../models/Games");
-const validator = require("validator");
 
 const getAllGames = async (req, res) => {
   try {
