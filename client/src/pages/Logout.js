@@ -15,7 +15,6 @@ const Logout = (props) => {
     <div className="msg-div">
       {!loggedIn ? (
         <p className="library-p">
-          Please
           <Link id="log-p" to={"/login"}>
             {" "}
             login{" "}
